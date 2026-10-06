@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>sorry, baby ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(145deg,#eaf6ff,#d9edff,#f4faff);
+    font-family:'Nunito',sans-serif;
+    color:#31506b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+}
+
+.card{
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:28px;
+    padding:28px 23px;
+    text-align:center;
+    box-shadow:0 15px 45px rgba(73,130,170,.16);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#c9e8ff;
+    border-radius:50%;
+    top:-60px;
+    right:-45px;
+    opacity:.55;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:#e0f2ff;
+    border-radius:50%;
+    bottom:-35px;
+    left:-30px;
+}
+
+.emoji{
+    font-size:48px;
+    margin-bottom:8px;
+    animation:float 2.5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-7px)}
+}
+
+h1{
+    font-size:27px;
+    color:#274862;
+    margin-bottom:7px;
+}
+
+.subtitle{
+    font-size:13px;
+    color:#7591a7;
+    margin-bottom:24px;
+}
+
+.message{
+    background:#f5faff;
+    border-radius:20px;
+    padding:19px;
+    text-align:left;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:17px;
+}
+
+.message b{
+    color:#315b78;
+}
+
+.hidden{
+    display:none;
+}
+
+button{
+    border:none;
+    font-family:'Nunito',sans-serif;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.main-btn{
+    width:100%;
+    padding:14px;
+    border-radius:16px;
+    background:#83bde3;
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    box-shadow:0 7px 18px rgba(91,157,201,.25);
+}
+
+.main-btn:active{
+    transform:scale(.96);
+}
+
+.choice{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+}
+
+.choice button{
+    flex:1;
+    padding:12px;
+    border-radius:14px;
+    background:#edf7ff;
+    color:#52758e;
+    font-size:13px;
+    font-weight:700;
+}
+
+.choice button:hover{
+    background:#dcefff;
+}
+
+.note{
+    margin-top:20px;
+    font-family:'Patrick Hand',cursive;
+    font-size:18px;
+    color:#7395ac;
+}
+
+.progress{
+    margin-top:20px;
+    font-size:11px;
+    color:#9bb0bf;
+}
+
+.heart{
+    position:fixed;
+    font-size:15px;
+    opacity:.45;
+    animation:fall linear infinite;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-20px) rotate(0deg);
+    }
+    to{
+        transform:translateY(105vh) rotate(180deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart" style="left:8%;animation-duration:8s;">♡</div>
+<div class="heart" style="left:25%;animation-duration:10s;">♡</div>
+<div class="heart" style="left:52%;animation-duration:7s;">♡</div>
+<div class="heart" style="left:76%;animation-duration:9s;">♡</div>
+<div class="heart" style="left:91%;animation-duration:11s;">♡</div>
+
+<div class="container">
+
+    <!-- HALAMAN 1 -->
+    <div class="card" id="page1">
+
+        <div class="emoji">🥹</div>
+
+        <h1>okay... i need to say something</h1>
+
+        <p class="subtitle">
+            jangan langsung kabur ya, baca dulu pls
+        </p>
+
+        <div class="message">
+            aku mau minta maaf yaa kalau akhir-akhir ini
+            <b>kamu ngechat aku di IG terus aku balasnya lama.</b>
+            <br><br>
+            bukan karena aku nggak mau ngobrol sama kamu,
+            apalagi sengaja ngejauhin kamu.
+        </div>
+
+        <button class="main-btn" onclick="nextPage(2)">
+            lanjut baca →
+        </button>
+
+        <div class="note">
+            trust me, i mean this.
+        </div>
+
+    </div>
+
+
+    <!-- HALAMAN 2 -->
+    <div class="card hidden" id="page2">
+
+        <div class="emoji">🤏🏻</div>
+
+        <h1>i'm trying, okay?</h1>
+
+        <div class="message">
+            aku sadar kok kalau aku masih banyak kurangnya.
+            aku juga <b>lagi berusaha buat memperbaiki</b>
+            cara aku komunikasi sama kamu.
+            <br><br>
+            mungkin belum langsung berubah 100%,
+            tapi bukan berarti aku nggak berusaha.
+            <br><br>
+            pelan-pelan yaa.
+            <b>i'm working on it.</b>
+        </div>
+
+        <button class="main-btn" onclick="nextPage(3)">
+            ada satu hal lagi →
+        </button>
+
+        <div class="progress">
+            2 / 4
+        </div>
+
+    </div>
+
+
+    <!-- HALAMAN 3 -->
+    <div class="card hidden" id="page3">
+
+        <div class="emoji">🫵🏻</div>
+
+        <h1>and please, don't say this...</h1>
+
+        <div class="message">
+            kalau kamu kecewa atau ngerasa aku bikin kamu nggak nyaman,
+            <b>jangan malah mendem sendiri.</b>
+            <br><br>
+
+            jangan bilang,
+            <br>
+            <b>"maaf ya aku maksa."</b>
+            <br><br>
+
+            engga baby, engga 😭
+            <br><br>
+
+            aku malah lebih suka kamu ngomong langsung.
+            bilang aja kamu ngerasa apa, kamu kecewa karena apa,
+            atau kamu butuh apa dari aku.
+            <br><br>
+
+            <b>aku lebih milih kamu ngomong daripada kamu pendem semuanya.</b>
+        </div>
+
+        <button class="main-btn" onclick="nextPage(4)">
+            terus yang ini juga →
+        </button>
+
+        <div class="progress">
+            3 / 4
+        </div>
+
+    </div>
+
+
+    <!-- HALAMAN 4 -->
+    <div class="card hidden" id="page4">
+
+        <div class="emoji">🫶🏻</div>
+
+        <h1>last one, promise</h1>
+
+        <div class="message">
+            dan please jangan bilang,
+            <br>
+            <b>"maaf ya kalau kamu kecewa."</b>
+            <br><br>
+
+            no no baby, engga.
+            kalau aku kecewa, ya kita omongin.
+            kalau kamu kecewa, <b>kamu juga boleh ngomong.</b>
+            <br><br>
+
+            aku nggak mau hubungan kita isinya
+            tebak-tebakan siapa yang salah atau siapa yang harus minta maaf duluan.
+            <br><br>
+
+            aku pengennya kita bisa
+            <b>ngobrol, saling ngerti, terus sama-sama belajar.</b>
+        </div>
+
+        <button class="main-btn" onclick="showFinal()">
+            klik kalau udah selesai baca ♡
+        </button>
+
+        <div class="progress">
+            4 / 4
+        </div>
+
+    </div>
+
+
+    <!-- FINAL -->
+    <div class="card hidden" id="final">
+
+        <div class="emoji">🤍</div>
+
+        <h1>thank you for staying.</h1>
+
+        <div class="message">
+            makasih ya udah mau ngerti aku.
+            <br><br>
+
+            aku mungkin nggak selalu jago
+            nunjukan apa yang aku rasain,
+            tapi aku beneran menghargai kamu
+            dan semua usaha kamu.
+            <br><br>
+
+            jadi kalau ada yang bikin kamu nggak nyaman,
+            <b>come talk to me, okay?</b>
+            <br><br>
+
+            kita nggak harus selalu sempurna.
+            yang penting jangan berhenti
+            buat saling ngerti. 
+            <br><br>
+
+            <b>i'm sorry, and i'll try to be better. ♡</b>
+        </div>
+
+        <div class="choice">
+            <button onclick="reaction('hehe')">
+                okayy ♡
+            </button>
+
+            <button onclick="reaction('hug')">
+                sini dulu 🫂
+            </button>
+        </div>
+
+        <p class="note" id="reactionText">
+            dari seseorang yang masih belajar :)
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function nextPage(page){
+
+    document.querySelectorAll('.card').forEach(card=>{
+        card.classList.add('hidden');
+    });
+
+    document.getElementById('page'+page).classList.remove('hidden');
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+function showFinal(){
+
+    document.querySelectorAll('.card').forEach(card=>{
+        card.classList.add('hidden');
+    });
+
+    document.getElementById('final').classList.remove('hidden');
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+function reaction(type){
+
+    const text=document.getElementById('reactionText');
+
+    if(type==='hehe'){
+        text.innerHTML="hehe makasih udah baca sampai sini ♡";
+    }
+
+    if(type==='hug'){
+        text.innerHTML="sini, nggak usah banyak ngomong dulu 🫂";
+    }
+}
+
+</script>
+
+</body>
+</html>
